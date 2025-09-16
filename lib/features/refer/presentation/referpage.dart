@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:referpage/features/refer/presentation/widgets/invitewidget.dart';
-import 'package:referpage/features/refer/application/providers.dart';
+import 'package:referpage/features/refer/controllers/providers.dart';
 import 'package:referpage/features/refer/presentation/widgets/referrallist.dart';
 
 class Referpage extends ConsumerWidget {
@@ -20,7 +21,7 @@ class Referpage extends ConsumerWidget {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.all(12),
+              padding: EdgeInsets.all(12.r),
               child: Row(
                 children: [
                   IconButton(
@@ -34,20 +35,20 @@ class Referpage extends ConsumerWidget {
                     style: TextStyle(
                       color: const Color.fromARGB(255, 21, 77, 122),
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 18.sp,
                     ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
+              padding: EdgeInsetsGeometry.symmetric(horizontal: 12.r),
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12.r),
                 ),
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(16.r),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -55,11 +56,11 @@ class Referpage extends ConsumerWidget {
                       'Your Referral Code',
                       style: TextStyle(
                         color: Colors.black,
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 8),
+                    SizedBox(height: 8.h),
                     Row(
                       children: [
                         Expanded(
@@ -75,7 +76,7 @@ class Referpage extends ConsumerWidget {
                                 250,
                               ),
                               border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8.r),
                                 borderSide: BorderSide.none,
                               ),
                               suffixIcon: IconButton(
@@ -94,11 +95,11 @@ class Referpage extends ConsumerWidget {
                         ),
                       ],
                     ),
-                    SizedBox(height: 12),
+                    SizedBox(height: 12.h),
                     MaterialButton(
                       minWidth: double.infinity,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18),
+                        borderRadius: BorderRadius.circular(18.r),
                       ),
                       color: const Color.fromARGB(255, 8, 79, 138),
                       onPressed: () {},
@@ -111,9 +112,9 @@ class Referpage extends ConsumerWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             Padding(
-              padding: EdgeInsetsGeometry.symmetric(horizontal: 12),
+              padding: EdgeInsetsGeometry.symmetric(horizontal: 12.r),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -145,24 +146,24 @@ class Referpage extends ConsumerWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 16),
+            SizedBox(height: 16.h),
             Expanded(
               child: Container(
                 height: double.infinity,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(28),
-                    topRight: Radius.circular(28),
+                    topLeft: Radius.circular(28.r),
+                    topRight: Radius.circular(28.r),
                   ),
                 ),
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(16.r),
                 child: Column(
                   children: [
                     Row(
                       children: [
                         MaterialButton(
-                          minWidth: 50,
+                          minWidth: 50.w,
                           onPressed: () {
                             ref.read(selectedButtonProvider.notifier).state =
                                 "All";
@@ -171,7 +172,7 @@ class Referpage extends ConsumerWidget {
                               ? const Color.fromARGB(255, 21, 77, 122)
                               : Colors.white,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18),
+                            borderRadius: BorderRadius.circular(18.r),
                             side: BorderSide(
                               color: Color.fromARGB(255, 21, 77, 122),
                             ),
@@ -185,7 +186,7 @@ class Referpage extends ConsumerWidget {
                             ),
                           ),
                         ),
-                        SizedBox(width: 10),
+                        SizedBox(width: 10.w),
                         MaterialButton(
                           minWidth: double.minPositive,
                           onPressed: () {
@@ -196,7 +197,7 @@ class Referpage extends ConsumerWidget {
                               ? const Color.fromARGB(255, 21, 77, 122)
                               : Colors.white,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18),
+                            borderRadius: BorderRadius.circular(18.r),
                             side: BorderSide(
                               color: const Color.fromARGB(255, 21, 77, 122),
                             ),
@@ -212,7 +213,7 @@ class Referpage extends ConsumerWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 12),
+                    SizedBox(height: 12.h),
                     Expanded(
                       child: ListView.separated(
                         itemCount: contacts.length,
